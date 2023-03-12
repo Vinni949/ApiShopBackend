@@ -32,13 +32,16 @@ namespace ApiShopBackend.Controllers
         }
 
         // PUT api/<ShopController>/5
-        [HttpPut("{id}")]
-        public void Put(string jsonString)
+        [HttpPut("AddShop")]
+        public string AddShop(string jsonString)
         {
-            Shop shop = JsonSerializer.Deserialize<Shop>(jsonString);
-
-
-
+            Shop? shop = JsonSerializer.Deserialize<Shop>(jsonString);
+            if (shop != null)
+            {
+                return "ok";
+            }
+            else
+                return "error";
         }
 
         // DELETE api/<ShopController>/5

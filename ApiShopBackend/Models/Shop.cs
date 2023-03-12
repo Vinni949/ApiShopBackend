@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public string Name { get; set; }
         public string? Description { get; set; }
-        public List<string> organizationsId { get; set; }
+        public List<Organization>? organizationsId { get; set; }
     }
 }
